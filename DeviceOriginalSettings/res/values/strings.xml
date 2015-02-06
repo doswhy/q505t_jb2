@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Device Original Settings</string>
+    <string name="color_temperature_title">Color temperature</string>
+    <string name="color_temperature_summary">Adjust the sharpest degree of the screen.</string>
+    <string name="color_temperature_default">Default</string>
+    <string name="color_temperature_warm">Warm</string>
+    <string name="color_temperature_cold">Cold</string>
+    <string name="finger_glove_mode_title">Gloves mode</string>
+    <string name="finger_glove_summary_on">Gloves mode On</string>
+    <string name="finger_glove_summary_off">Gloves mode Off</string>
+    <string name="glovemode_prop_info">Gloves mode can support user to touch the screen with little space.Enable it can touch with Gloves.</string>
+    <string name="glovemode_never_propmt">Never prompts</string>
+    <string name="smart_backlight_title">Smart backlight</string>
+    <string name="smart_backlight_summary_on">Smart backlight On</string>
+    <string name="smart_backlight_summary_off">Smart backlight Off</string>
+    <string name="glovemode_confirm">OK</string>
+    <string name="dolby_mobile_settings_title">Dolby Mobile settings</string>
+    <string name="dolby_mobile_settings_summary">For more audio effects, connect a headset.</string>
+    <string name="power_manager">Power Manager</string>
+    <string name="power_manager_summary">The system will adjust the CPU usage and application network access frequency automatically to reduce power consumption.</string>
+    <string name="confirm">confirm</string>
+    <string name="lenovo_light_settings_title">呼吸灯</string>
+    <string name="lenovo_light_settings_summary">开启或关闭呼吸灯选项</string>
+    <string name="mipop">MIPop</string>
+    <string name="camera_sound_switch">Camera Sound Switch</string>
+    <string name="camera_sound">Camera Sound</string>
+    <string name="record_sound">Video Record Sound</string>
+    <string name="focus_sound">Focus Sound</string>
+    <string name="schedulepoweronoff_settings">Schedule power on off</string>
+    <string name="swing_key">swing key</string>
+    <string name="swing_lock_summary">swing lock summary</string>
+    <string name="character_settings">Character Settings</string>
+    <string name="lenovo_camera">lenovo camera</string>
+    <string name="warning">warning</string>
+    <string name="lenovo_camera_enable">lenovo camera enable</string>
+    <string name="double_click">双击亮屏</string>
+    <string name="oppo_double_click_screen_on_summary">熄屏状态下双击唤醒屏幕</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.4-S710_S_2.1.47.36" coreApp="true" package="com.baidu.deviceoriginalsettings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:label="@string/app_name" android:icon="@drawable/ic_original_settings">
+        <uses-library android:name="framework-yi" android:required="true" />
+        <activity android:theme="@*android:style/Theme.DeviceDefault.Light.DarkActionBar" android:label="@string/app_name" android:name=".DeviceOriginalSettingsActivity" android:screenOrientation="portrait" android:configChanges="orientation">
+            <intent-filter>
+                <action android:name="com.baidu.device_original_settings" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@*android:style/Theme.DeviceDefault.Light.DarkActionBar" android:label="@string/camera_sound_switch" android:name="CameraSound">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@*android:style/Theme.DeviceDefault.Light.DarkActionBar" android:label="@string/character_settings" android:name="CharacterSettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preferred_network_mode_choices">
+        <item>自动 2G/3G/4G 模式</item>
+        <item>自动 2G/3G 模式</item>
+        <item>自动 3G/4G 模式</item>
+        <item>只使用 3G 模式</item>
+        <item>只使用 2G 模式</item>
+    </string-array>
+</resources>

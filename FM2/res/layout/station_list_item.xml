@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/item" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:id="@id/TableLayout1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1">
+        <TableRow>
+            <TextView android:id="@id/fixName" android:paddingLeft="30.0dip" android:paddingTop="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/station_name" />
+            <TextView android:ellipsize="marquee" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:marqueeRepeatLimit="marquee_forever" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textSize="20.0sp" android:id="@id/freq" android:paddingLeft="30.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="2" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

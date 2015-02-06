@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notification_pulse_color_entries">
+        <item>@string/pulse_color_red</item>
+        <item>@string/pulse_color_green</item>
+    </string-array>
+    <string-array name="notification_pulse_color_values">
+        <item>0x00FF0000</item>
+        <item>0x0000FF00</item>
+    </string-array>
+</resources>

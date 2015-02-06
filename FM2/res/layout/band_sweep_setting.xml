@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="15.0sp" android:id="@id/lbl_band_sweep_spinner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/band_sweep_choose" />
+        <Spinner android:textSize="25.0sp" android:id="@id/band_sweep_spinner" android:layout_width="fill_parent" android:layout_height="75.0dip" android:prompt="@string/band_method_prompt" android:layout_below="@id/lbl_band_sweep_spinner" />
+        <TextView android:textSize="15.0sp" android:id="@id/LabelStartdelay" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/enter_start_delay_time" android:layout_below="@id/band_sweep_spinner" />
+        <EditText android:textSize="15.0sp" android:id="@id/txtboxDelayTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/LabelStartdelay" android:inputType="number" />
+        <TextView android:textSize="15.0sp" android:id="@id/LabelDwellTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/enter_dwell_time" android:layout_below="@id/LabelStartdelay" />
+        <EditText android:textSize="15.0sp" android:id="@id/txtboxDwellTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/LabelDwellTime" android:inputType="number" />
+    </LinearLayout>
+</ScrollView>

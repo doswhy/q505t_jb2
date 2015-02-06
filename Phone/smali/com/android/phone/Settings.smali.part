@@ -1,0 +1,463 @@
+.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .locals 7
+    .parameter "preference"
+    .parameter "objValue"
+
+    .prologue
+    const/4 v6, 0x1
+
+    .line 340
+    iget-object v3, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    if-ne p1, v3, :cond_1
+
+    .line 343
+    iget-object v4, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    move-object v3, p2
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-virtual {v4, v3}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
+
+    .line 345
+    check-cast p2, Ljava/lang/String;
+
+    .end local p2
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    .line 346
+    .local v0, buttonNetworkMode:I
+    iget-object v3, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "preferred_network_mode"
+
+    const/4 v5, 0x7
+
+    invoke-static {v3, v4, v5}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    .line 349
+    .local v2, settingsNetworkMode:I
+    if-eq v0, v2, :cond_1
+
+    .line 350
+    move v1, v0
+
+    .line 352
+    .local v1, modemNetworkMode:I
+    if-ltz v1, :cond_0
+
+    const/16 v3, 0x18
+
+    if-le v1, v3, :cond_2
+
+    .line 354
+    :cond_0
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Invalid Network Mode ("
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ") Chosen. Ignore mode"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/phone/Settings;->log(Ljava/lang/String;)V
+
+    .line 370
+    .end local v0           #buttonNetworkMode:I
+    .end local v1           #modemNetworkMode:I
+    .end local v2           #settingsNetworkMode:I
+    :cond_1
+    :goto_0
+    return v6
+
+    .line 358
+    .restart local v0       #buttonNetworkMode:I
+    .restart local v1       #modemNetworkMode:I
+    .restart local v2       #settingsNetworkMode:I
+    :cond_2
+    invoke-direct {p0, v0}, Lcom/android/phone/Settings;->updatePreferredNetworkModeSummary(I)V
+
+    .line 360
+    iget-object v3, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "preferred_network_mode"
+
+    invoke-static {v3, v4, v0}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 364
+    iget-object v3, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
+
+    iget-object v4, p0, Lcom/android/phone/Settings;->mHandler:Lcom/android/phone/Settings$MyHandler;
+
+    invoke-virtual {v4, v6}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v4
+
+    invoke-interface {v3, v1, v4}, Lcom/android/internal/telephony/Phone;->setPreferredNetworkType(ILandroid/os/Message;)V
+
+    goto :goto_0
+.end method
+
+
+.method private updatePreferredNetworkModeSummary(I)V
+    .locals 2
+    .parameter "networkMode"
+
+    .prologue
+    const v1, #com.android.phone:string@preferred_network_mode_global_summary#t
+
+    .line 658
+    packed-switch p1, :pswitch_data_0
+
+    .line 698
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    .line 701
+    :goto_0
+    return-void
+
+    .line 660
+    :pswitch_0
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_wcdma_perf_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 664
+    :pswitch_1
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_gsm_only_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 668
+    :pswitch_2
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_wcdma_only_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 672
+    :pswitch_3
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_gsm_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 676
+    :pswitch_4
+    iget-object v0, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLteOnCdmaMode()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_1
+
+    .line 683
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_cdma_evdo_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 678
+    :pswitch_5
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_cdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 689
+    :pswitch_6
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_cdma_only_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 693
+    :pswitch_7
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_evdo_only_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    :pswitch_8
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_lte_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 529
+    :pswitch_9
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_lte_gsm_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 533
+    :pswitch_a
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_lte_cdma_evdo_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 537
+    :pswitch_b
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 541
+    :pswitch_c
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_cdma_evdo_gsm_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto :goto_0
+
+    .line 545
+    :pswitch_d
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_lte_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 549
+    :pswitch_e
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_only_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 689
+    :pswitch_f
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 689
+    :pswitch_10
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_lte_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 561
+    :pswitch_11
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_gsm_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 565
+    :pswitch_12
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_gsm_lte_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 569
+    :pswitch_13
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_gsm_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 573
+    :pswitch_14
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_wcdma_lte_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 577
+    :pswitch_15
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_gsm_wcdma_lte_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 581
+    :pswitch_16
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_cdma_evdo_gsm_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    .line 658
+    :pswitch_17
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_td_scdma_lte_cdma_evdo_gsm_wcdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    :pswitch_18
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_lte_cdma_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    :pswitch_19
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Landroid/preference/ListPreference;
+
+    const v1, #com.android.phone:string@preferred_network_mode_lte_gsm_summary#t
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setSummary(I)V
+
+    goto/16 :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_6
+        :pswitch_7
+        :pswitch_c
+        :pswitch_a
+        :pswitch_9
+        :pswitch_b
+        :pswitch_8
+        :pswitch_d
+        :pswitch_e
+        :pswitch_f
+        :pswitch_10
+        :pswitch_11
+        :pswitch_12
+        :pswitch_13
+        :pswitch_14
+        :pswitch_15
+        :pswitch_16
+        :pswitch_17
+        :pswitch_18
+        :pswitch_19
+    .end packed-switch
+
+    .line 676
+    :pswitch_data_1
+    .packed-switch 0x1
+        :pswitch_5
+    .end packed-switch
+.end method
+

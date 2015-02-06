@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <add-resource type="string" name="preferred_network_mode_lte_summary" />
+    <add-resource type="string" name="preferred_network_mode_lte_gsm_wcdma_summary" />
+    <add-resource type="string" name="preferred_network_mode_lte_cdma_evdo_summary" />
+    <add-resource type="string" name="preferred_network_mode_global_summary" />
+    <add-resource type="string" name="preferred_network_mode_lte_wcdma_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_only_summary" />	
+    <add-resource type="string" name="preferred_network_mode_td_scdma_wcdma_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_lte_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_gsm_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_gsm_lte_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_gsm_wcdma_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_wcdma_lte_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_gsm_wcdma_lte_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_lte_cdma_evdo_gsm_wcdma_summary" />
+    <add-resource type="string" name="preferred_network_mode_td_scdma_cdma_evdo_gsm_wcdma_summary" />
+    <add-resource type="string" name="preferred_network_mode_cdma_evdo_gsm_wcdma_summary" />
+    <add-resource type="string" name="preferred_network_mode_lte_gsm_summary" />
+</resources>

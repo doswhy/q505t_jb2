@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="test_image">false</item>
+    <item type="id" name="default_setting">false</item>
+    <item type="id" name="seekbar">false</item>
+    <item type="id" name="warm_cold_linear">false</item>
+    <item type="id" name="warm_text">false</item>
+    <item type="id" name="cold_text">false</item>
+</resources>

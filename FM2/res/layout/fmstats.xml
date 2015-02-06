@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Spinner android:textSize="25.0sp" android:id="@id/spinner" android:layout_width="fill_parent" android:layout_height="75.0dip" android:prompt="@string/test_prompt" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="100.0dip"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <Button android:textSize="25.0dip" android:id="@id/Runbutton" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="100.0dip" android:text="@string/band_sweep_setting" />
+            <TextView android:textSize="25.0sp" android:id="@id/BandSweepSetting" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/band_sweep_setting" android:layout_toRightOf="@id/Runbutton" />
+            <ProgressBar android:id="@id/progressbar" android:visibility="gone" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_toRightOf="@id/Runbutton" />
+            <TextView android:textSize="15.0sp" android:id="@id/label" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/enter_rssi" />
+            <EditText android:textSize="15.0sp" android:id="@id/txtbox1" android:visibility="gone" android:layout_width="100.0dip" android:layout_height="50.0dip" android:text="@string/type_rd" android:layout_alignParentRight="true" />
+            <Button android:textSize="15.0sp" android:id="@id/Setbutton" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="100.0dip" android:text="@string/set_rmmsi_delta" android:layout_below="@id/txtbox1" />
+            <Button android:id="@id/SearchMpxDcc" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_algo_mpx" />
+            <Button android:id="@id/SearchSinrInt" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_algo_sinrint" android:layout_below="@id/SearchMpxDcc" />
+        </RelativeLayout>
+        <TableLayout android:id="@id/maintable" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <TableRow android:id="@id/mainrow" />
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory android:title="存储设置">
+        <Preference android:title="@string/character_settings" android:key="character_settings" android:summary="设置外置SD卡为主存储设备，您可以将应用数据保存到sd卡。">
+            <intent android:targetPackage="com.android.stocksettings" android:action="android.intent.action.MAIN" android:targetClass="com.android.stocksettings.SwitchToExternalSD" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="附加选项设置">
+        <Preference android:title="@string/mipop" android:key="mipop" android:summary="屏幕助手">
+	    <intent android:targetPackage="com.android.mipop" android:action="android.intent.action.MAIN" android:targetClass="com.android.mipop.MIPopActivity"/>
+	</Preference>
+        <Preference android:title="保护套开关屏" android:summary="启用皮套控制屏幕">
+            <intent android:targetPackage="smart.cover" android:action="android.intent.action.MAIN" android:targetClass="smart.cover.Main" />
+        </Preference>
+        <Preference android:title="程序禁用" android:summary="禁用的程序后台不会自启，不影响OTA增量升级">
+            <intent android:targetPackage="com.kqstone.appdisabler" android:action="android.intent.action.MAIN" android:targetClass="com.kqstone.appdisabler.MainActivity" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="增强设置">
+        <Preference android:title="谷歌套件和Xposed百度版安装向导" android:summary="链接到谷歌套件和xposed的下载及安装说明">
+            <intent android:action="android.intent.action.VIEW" android:data="http://pan.baidu.com/s/1dDChnpR" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="关于">
+        <Preference android:title="ROM作者信息" android:summary="欢迎使用行云开发组孟西适配的百度云ROM\n
+点击访问本人微博，获取更多最新ROM资讯。">
+            <intent android:action="android.intent.action.VIEW" android:data="http://weibo.com/42008250" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

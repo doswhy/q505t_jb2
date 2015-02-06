@@ -1,0 +1,13 @@
+version: 1.5.2
+apkFileName: FM2.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '18'
+  targetSdkVersion: '18'
+packageInfo:
+  cur_package: com.caf.fmradio
+  orig_package: com.caf.fmradio
+compressionType: false

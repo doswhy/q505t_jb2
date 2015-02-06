@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">原厂设置</string>
+    <string name="color_temperature_title">色温调节</string>
+    <string name="color_temperature_summary">调节屏幕显示的柔和与锐丽程度。</string>
+    <string name="color_temperature_default">默认</string>
+    <string name="color_temperature_warm">柔和</string>
+    <string name="color_temperature_cold">锐丽</string>
+    <string name="finger_glove_mode_title">手套模式</string>
+    <string name="finger_glove_summary_on">手套模式开启</string>
+    <string name="finger_glove_summary_off">手套模式关闭</string>
+    <string name="glovemode_prop_info">手套模式支持用户近距离悬空对手机进行操作。开启此功能可隔着手套操控手机。</string>
+    <string name="glovemode_never_propmt">下次不再提示</string>
+    <string name="smart_backlight_title">智能背光</string>
+    <string name="smart_backlight_summary_on">智能背光开启</string>
+    <string name="smart_backlight_summary_off">智能背光关闭</string>
+    <string name="glovemode_confirm">确定</string>
+    <string name="dolby_mobile_settings_title">杜比移动技术设置</string>
+    <string name="dolby_mobile_settings_summary">插入耳机，将会有多种杜比音效供选择。</string>
+    <string name="power_manager">省电管理</string>
+    <string name="power_manager_summary">调节CPU运行状态和系统应用联网频率从而智能省电。</string>
+    <string name="confirm">确定</string>
+    <string name="mipop">屏幕助手</string>
+    <string name="camera_sound_switch">相机声音开关</string>
+    <string name="camera_sound">拍照声音</string>
+    <string name="record_sound">录像声音</string>
+    <string name="focus_sound">对焦声音</string>
+    <string name="schedulepoweronoff_settings">定时开关机</string>
+    <string name="swing_key">甩动锁屏</string>
+    <string name="swing_lock_summary">单向快速甩动手机，即可屏幕锁定</string>
+    <string name="character_settings">列表动画设置</string>
+    <string name="lenovo_camera">联想相机</string>
+    <string name="warning">警告</string>
+    <string name="lenovo_camera_enable">开启/关闭联想相机</string>
+</resources>

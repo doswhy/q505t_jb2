@@ -1,0 +1,30 @@
+
+.method public setPhone(Lcom/android/internal/telephony/Phone;)V
+    .locals 0
+    .parameter "phone"
+
+    .prologue
+    .line 953
+    iput-object p1, p0, Lcom/android/phone/PhoneInterfaceManager;->mPhone:Lcom/android/internal/telephony/Phone;
+
+    .line 954
+    return-void
+.end method
+
+
+
+#.method public supplyPuk(Ljava/lang/String;Ljava/lang/String;)Z
+#    .locals 1
+#    .parameter "puk"
+#    .parameter "pin"
+#
+#    .prologue
+#    .line 469
+# 
+#    const/4 v0, 0x0
+#
+#    return v0
+#.end method
+
+
+
