@@ -8,4 +8,8 @@
         <item>0x00FF0000</item>
         <item>0x0000FF00</item>
     </string-array>
+    <string-array name="wifi_ap_security">
+        <item>Open</item>
+        <item>WPA/WPA2 PSK</item>
+    </string-array>
 </resources>
