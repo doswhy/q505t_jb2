@@ -2,11 +2,11 @@
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-    <PreferenceCategory android:title="存储设置">
+    <!--PreferenceCategory android:title="存储设置">
         <Preference android:title="@string/character_settings" android:key="character_settings" android:summary="设置外置SD卡为主存储设备，您可以将应用数据保存到sd卡。">
             <intent android:targetPackage="com.android.stocksettings" android:action="android.intent.action.MAIN" android:targetClass="com.android.stocksettings.SwitchToExternalSD" />
         </Preference>
-    </PreferenceCategory>
+    </PreferenceCategory-->
     <PreferenceCategory android:title="附加选项设置">
         <Preference android:title="@string/mipop" android:key="mipop" android:summary="屏幕助手">
 	    <intent android:targetPackage="com.android.mipop" android:action="android.intent.action.MAIN" android:targetClass="com.android.mipop.MIPopActivity"/>

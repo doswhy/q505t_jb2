@@ -106,8 +106,7 @@ baidu_remove_apps := BaiduUpdate
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode baidu system apk).
 #-----------------------------------------------------------------------------
-baidu_modify_apps := Phone Settings 
-#SystemUI
+baidu_modify_apps := Phone Settings SystemUI
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the baidu framework jar.
@@ -148,8 +147,25 @@ override_property += \
     ro.baidu.romer=mengxi \
     ro.baidu.romerinfo=http://weibo.com/42008250/ \
     romzj.rom.id=79e96419-4e48-1d66-79c0-b09170361c53 \
-    romzj.rom.version=test_ROM65 \
-    romzj.rom.version.code=65
+    romzj.rom.version=test_ROM67 \
+    romzj.rom.version.code=67
+# The property "ro.baidu.default_write.settable" decide whether support storage switch.
+# The default value is false.
+# The property "ro.baidu.mountpoint.settable" decide whether support the physical storage switch.
+# The default value is false.
+# In general, only a few devices support the physical storage switch, most devices support the logical storage switch.
+# The property "persist.sys.baidu.default_write" decide the default storage.
+# The default value is first_storage, meaning the internal storage. The other value is secondary_storage, meaning the external storage.
+# You should configure these properties according to your device.
+override_property += \
+    ro.baidu.default_write.settable=true \
+    persist.sys.baidu.default_write=first_storage
+
+# The property decide the asec volume for your device.
+# The default value is 0, meaning the asec volume is the primary volume. The other value is 1, meaning the asec volume is the external sdcard.
+# You should configure the property according to your device.
+override_property += \
+    ro.baidu.asec.type=1
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
